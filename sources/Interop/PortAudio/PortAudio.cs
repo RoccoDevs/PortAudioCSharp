@@ -8,141 +8,141 @@ namespace PortAudioCSharp.Interop
 {
     public static unsafe partial class PortAudio
     {
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int Pa_GetVersion();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* Pa_GetVersionText();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const PaVersionInfo *")]
         public static extern PaVersionInfo* Pa_GetVersionInfo();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* Pa_GetErrorText([NativeTypeName("PaError")] int errorCode);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_Initialize();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_Terminate();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaHostApiIndex")]
         public static extern int Pa_GetHostApiCount();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaHostApiIndex")]
         public static extern int Pa_GetDefaultHostApi();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const PaHostApiInfo *")]
         public static extern PaHostApiInfo* Pa_GetHostApiInfo([NativeTypeName("PaHostApiIndex")] int hostApi);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaHostApiIndex")]
         public static extern int Pa_HostApiTypeIdToHostApiIndex(PaHostApiTypeId type);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaDeviceIndex")]
         public static extern int Pa_HostApiDeviceIndexToDeviceIndex([NativeTypeName("PaHostApiIndex")] int hostApi, int hostApiDeviceIndex);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const PaHostErrorInfo *")]
         public static extern PaHostErrorInfo* Pa_GetLastHostErrorInfo();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaDeviceIndex")]
         public static extern int Pa_GetDeviceCount();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaDeviceIndex")]
         public static extern int Pa_GetDefaultInputDevice();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaDeviceIndex")]
         public static extern int Pa_GetDefaultOutputDevice();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const PaDeviceInfo *")]
         public static extern PaDeviceInfo* Pa_GetDeviceInfo([NativeTypeName("PaDeviceIndex")] int device);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_IsFormatSupported([NativeTypeName("const PaStreamParameters *")] PaStreamParameters* inputParameters, [NativeTypeName("const PaStreamParameters *")] PaStreamParameters* outputParameters, double sampleRate);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_OpenStream([NativeTypeName("PaStream **")] void** stream, [NativeTypeName("const PaStreamParameters *")] PaStreamParameters* inputParameters, [NativeTypeName("const PaStreamParameters *")] PaStreamParameters* outputParameters, double sampleRate, [NativeTypeName("unsigned long")] uint framesPerBuffer, [NativeTypeName("PaStreamFlags")] uint streamFlags, [NativeTypeName("PaStreamCallback *")] delegate* unmanaged[Cdecl]<void*, void*, uint, PaStreamCallbackTimeInfo*, uint, void*, int>* streamCallback, void* userData);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_OpenDefaultStream([NativeTypeName("PaStream **")] void** stream, int numInputChannels, int numOutputChannels, [NativeTypeName("PaSampleFormat")] uint sampleFormat, double sampleRate, [NativeTypeName("unsigned long")] uint framesPerBuffer, [NativeTypeName("PaStreamCallback *")] delegate* unmanaged[Cdecl]<void*, void*, uint, PaStreamCallbackTimeInfo*, uint, void*, int>* streamCallback, void* userData);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_CloseStream([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_SetStreamFinishedCallback([NativeTypeName("PaStream *")] void* stream, [NativeTypeName("PaStreamFinishedCallback *")] delegate* unmanaged[Cdecl]<void*, void>* streamFinishedCallback);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_StartStream([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_StopStream([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_AbortStream([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_IsStreamStopped([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_IsStreamActive([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const PaStreamInfo *")]
         public static extern PaStreamInfo* Pa_GetStreamInfo([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaTime")]
         public static extern double Pa_GetStreamTime([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern double Pa_GetStreamCpuLoad([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_ReadStream([NativeTypeName("PaStream *")] void* stream, void* buffer, [NativeTypeName("unsigned long")] uint frames);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_WriteStream([NativeTypeName("PaStream *")] void* stream, [NativeTypeName("const void *")] void* buffer, [NativeTypeName("unsigned long")] uint frames);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("long")]
         public static extern int Pa_GetStreamReadAvailable([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("long")]
         public static extern int Pa_GetStreamWriteAvailable([NativeTypeName("PaStream *")] void* stream);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int Pa_GetSampleSize([NativeTypeName("PaSampleFormat")] uint format);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void Pa_Sleep([NativeTypeName("long")] int msec);
 
         [NativeTypeName("#define paNoDevice ((PaDeviceIndex)-1)")]
@@ -214,23 +214,23 @@ namespace PortAudioCSharp.Interop
         [NativeTypeName("#define paPrimingOutput ((PaStreamCallbackFlags) 0x00000010)")]
         public const uint paPrimingOutput = ((uint)(0x00000010));
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAsio_GetAvailableBufferSizes([NativeTypeName("PaDeviceIndex")] int device, [NativeTypeName("long *")] int* minBufferSizeFrames, [NativeTypeName("long *")] int* maxBufferSizeFrames, [NativeTypeName("long *")] int* preferredBufferSizeFrames, [NativeTypeName("long *")] int* granularity);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAsio_ShowControlPanel([NativeTypeName("PaDeviceIndex")] int device, void* systemSpecific);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAsio_GetInputChannelName([NativeTypeName("PaDeviceIndex")] int device, int channelIndex, [NativeTypeName("const char **")] sbyte** channelName);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAsio_GetOutputChannelName([NativeTypeName("PaDeviceIndex")] int device, int channelIndex, [NativeTypeName("const char **")] sbyte** channelName);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAsio_SetStreamSampleRate([NativeTypeName("PaStream *")] void* stream, double sampleRate);
 
@@ -240,37 +240,37 @@ namespace PortAudioCSharp.Interop
         [NativeTypeName("#define paAsioUseChannelSelectors (0x01)")]
         public const int paAsioUseChannelSelectors = (0x01);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaJack_SetClientName([NativeTypeName("const char *")] sbyte* name);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaJack_GetClientName([NativeTypeName("const char **")] sbyte** clientName);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void PaAlsa_InitializeStreamInfo(PaAlsaStreamInfo* info);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void PaAlsa_EnableRealtimeScheduling([NativeTypeName("PaStream *")] void* s, int enable);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAlsa_GetStreamInputCard([NativeTypeName("PaStream *")] void* s, int* card);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAlsa_GetStreamOutputCard([NativeTypeName("PaStream *")] void* s, int* card);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAlsa_SetNumPeriods(int numPeriods);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaAlsa_SetRetriesBusy(int retries);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void PaAlsa_SetLibraryPathName([NativeTypeName("const char *")] sbyte* pathName);
 
         [NativeTypeName("#define paWinDirectSoundUseLowLevelLatencyParameters (0x01)")]
@@ -279,59 +279,59 @@ namespace PortAudioCSharp.Interop
         [NativeTypeName("#define paWinDirectSoundUseChannelMask (0x04)")]
         public const int paWinDirectSoundUseChannelMask = (0x04);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_GetAudioClient([NativeTypeName("PaStream *")] void* pStream, void** pAudioClient, int bOutput);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_UpdateDeviceList();
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int PaWasapi_GetDeviceCurrentFormat([NativeTypeName("PaStream *")] void* pStream, void* pFormat, [NativeTypeName("unsigned int")] uint formatSize, int bOutput);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int PaWasapi_GetDeviceDefaultFormat(void* pFormat, [NativeTypeName("unsigned int")] uint formatSize, [NativeTypeName("PaDeviceIndex")] int device);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int PaWasapi_GetDeviceMixFormat(void* pFormat, [NativeTypeName("unsigned int")] uint formatSize, [NativeTypeName("PaDeviceIndex")] int device);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int PaWasapi_GetDeviceRole([NativeTypeName("PaDeviceIndex")] int device);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_GetIMMDevice([NativeTypeName("PaDeviceIndex")] int device, void** pIMMDevice);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_ThreadPriorityBoost(void** pTask, PaWasapiThreadPriority priorityClass);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_ThreadPriorityRevert(void* pTask);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_GetFramesPerHostBuffer([NativeTypeName("PaStream *")] void* pStream, [NativeTypeName("unsigned int *")] uint* pInput, [NativeTypeName("unsigned int *")] uint* pOutput);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_GetJackCount([NativeTypeName("PaDeviceIndex")] int device, int* pJackCount);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_GetJackDescription([NativeTypeName("PaDeviceIndex")] int device, int jackIndex, PaWasapiJackDescription* pJackDescription);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapi_SetStreamStateHandler([NativeTypeName("PaStream *")] void* pStream, [NativeTypeName("PaWasapiStreamStateCallback")] delegate* unmanaged[Cdecl]<void*, uint, uint, void*, void> fnStateHandler, void* pUserData);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapiWinrt_SetDefaultDeviceId([NativeTypeName("const unsigned short *")] ushort* pId, int bOutput);
 
-        [DllImport("", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("portaudio", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PaError")]
         public static extern int PaWasapiWinrt_PopulateDeviceList([NativeTypeName("const unsigned short **")] ushort** pId, [NativeTypeName("const unsigned short **")] ushort** pName, [NativeTypeName("const PaWasapiDeviceRole *")] PaWasapiDeviceRole* pRole, [NativeTypeName("unsigned int")] uint count, int bOutput);
     }

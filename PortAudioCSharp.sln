@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{1FD1147C-794F-4593-AB1E-21DFC8C3405A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4DE6FD43-1430-4206-A253-62DA8D1F8C5A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", "{0441FC9C-F998-4A5B-A003-3BE0D8AAA106}"
+	ProjectSection(SolutionItems) = preProject
+		generation\header.txt = generation\header.txt
+		generation\settings.rsp = generation\settings.rsp
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortAudioCSharp.Tests", "tests\interop\PortAudio\PortAudioCSharp.Tests.csproj", "{2531A816-2126-457E-87F2-075C9604B019}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortAudioCSharp.Interop", "sources\interop\PortAudio\PortAudioCSharp.Interop.csproj", "{4B71209B-7F85-46C1-9416-5FAB9C115B78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2531A816-2126-457E-87F2-075C9604B019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2531A816-2126-457E-87F2-075C9604B019}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2531A816-2126-457E-87F2-075C9604B019}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2531A816-2126-457E-87F2-075C9604B019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B71209B-7F85-46C1-9416-5FAB9C115B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B71209B-7F85-46C1-9416-5FAB9C115B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B71209B-7F85-46C1-9416-5FAB9C115B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B71209B-7F85-46C1-9416-5FAB9C115B78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2531A816-2126-457E-87F2-075C9604B019} = {4DE6FD43-1430-4206-A253-62DA8D1F8C5A}
+		{4B71209B-7F85-46C1-9416-5FAB9C115B78} = {1FD1147C-794F-4593-AB1E-21DFC8C3405A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A24DBBE9-587F-4CB3-A8BC-CBBE08C071D5}
+	EndGlobalSection
+EndGlobal
